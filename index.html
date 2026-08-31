@@ -124,15 +124,6 @@ footer{background:var(--card);border-top:1px solid var(--line);padding:34px 0;te
 footer a{color:var(--ink-soft);}
 footer .foot-links{display:flex;gap:16px;justify-content:center;margin-bottom:12px;flex-wrap:wrap;}
 
-#cookie-banner{position:fixed;left:0;right:0;bottom:0;z-index:200;background:#1b2436;color:#fff;padding:18px 20px;display:none;}
-#cookie-banner.show{display:block;}
-.cookie-inner{max-width:1040px;margin:0 auto;display:flex;flex-wrap:wrap;gap:16px;align-items:center;justify-content:space-between;}
-.cookie-inner p{margin:0;font-size:13px;color:#e5e7eb;max-width:640px;}
-.cookie-inner a{color:#fff;text-decoration:underline;}
-.cookie-actions{display:flex;gap:10px;flex-wrap:wrap;}
-.cookie-actions button{border:none;border-radius:999px;padding:10px 20px;font-weight:700;font-size:13px;cursor:pointer;font-family:inherit;}
-.btn-accept{background:var(--gold);color:#1c2b4a;}
-.btn-decline{background:transparent;color:#e5e7eb;border:1px solid #4b5563 !important;}
 </style>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-FGD1LTPNQH"></script>
@@ -317,54 +308,7 @@ footer .foot-links{display:flex;gap:16px;justify-content:center;margin-bottom:12
   </div>
 </footer>
 
-<div id="cookie-banner">
-  <div class="cookie-inner">
-    <p>Diese Website nutzt Analyse-Cookies (Matomo), um die Nutzung anonymisiert auszuwerten. Weitere Informationen finden Sie in unserer <a href="/datenschutz/">Datenschutzerklärung</a>.</p>
-    <div class="cookie-actions">
-      <button class="btn-decline" id="cookie-decline">Ablehnen</button>
-      <button class="btn-accept" id="cookie-accept">Akzeptieren</button>
-    </div>
-  </div>
-</div>
-
 <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
-<script>
-(function(){
-  var KEY = 'gmbhmiete_consent';
-  var banner = document.getElementById('cookie-banner');
-  var stored = localStorage.getItem(KEY);
-
-  function loadMatomo(){
-    if (window._paq) return;
-    var _paq = window._paq = window._paq || [];
-    _paq.push(['trackPageView']);
-    _paq.push(['enableLinkTracking']);
-    (function(){
-      var u = "https://counter.ixan.org/";
-      _paq.push(['setTrackerUrl', u+'matomo.php']);
-      _paq.push(['setSiteId', '113']);
-      var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
-      g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
-    })();
-  }
-
-  if (stored === 'accepted') {
-    loadMatomo();
-  } else if (stored !== 'declined') {
-    banner.classList.add('show');
-  }
-
-  document.getElementById('cookie-accept').addEventListener('click', function(){
-    localStorage.setItem(KEY, 'accepted');
-    banner.classList.remove('show');
-    loadMatomo();
-  });
-  document.getElementById('cookie-decline').addEventListener('click', function(){
-    localStorage.setItem(KEY, 'declined');
-    banner.classList.remove('show');
-  });
-})();
-</script>
 
 <!-- CUSTOM_HTML:default:START -->
 <script
