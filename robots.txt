@@ -38,3 +38,4 @@ Sitemap: https://www.gmbh-miete.de/sitemap.xml
 
 # LLM-lesbare Zusammenfassung dieser Website:
 # https://www.gmbh-miete.de/llms.txt
+Sitemap: https://www.gmbh-miete.de/sitemap-blog.xml
